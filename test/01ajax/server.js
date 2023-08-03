@@ -37,6 +37,13 @@ app.get('/ie',(request,response)=>{
     //设置响应体
     response.send('HELLO Express');
 })
+app.all('/axio-server',(request,response)=>{
+    //设置响应头
+    response.setHeader("Access-Control-Allow-Origin","*");
+    response.setHeader('Access-Control-Allow-Headers','*');
+
+    response.send('HELLO Express');
+})
 //4.监听端口启动服务
 app.listen(8000,()=>{
     console.log("服务已经启动");
